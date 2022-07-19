@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+        background : lightgrey ;
+        font-family : tahoma;
+        font-size : 12px;
+        color : #333;
+    }
+
+    #onglets  li{
+        float:left;
+        width : 125px;
+        height : 30px;
+        line-height : 30px;
+        background : rgba(255,255,255,0.4);
+        text-align : center;
+        margin-right : 5px;
+        color : rgba(0,0,0,0.6);
+        list-style: none;
+    }
+
+    #onglets  li.actif{
+        background : white;
+        color : black;
+    }
+
+    #contenus  li{
+        background : white;
+        width : 100%;
+        padding : 20px;
+        display : none;
+    }
+
+    #contenus  li.actif{
+        display : block;
+    }
+
+    /***** HACKS CSS *******/
+
+    .clearfix:before, .clearfix:after {
+        content: " "; 
+        display: table; 
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+
+
+
+
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 8;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        margin: 50px auto;
+        border: 1px solid #999;
+        width: 60%;
+    }
+
+      h2,
+      p {
+        margin: 0 0 20px;
+        font-weight: 400;
+        color: #999;
+      }
+      span {
+        color: #666;
+        display: block;
+        padding: 0 0 5px;
+      }
+      form {
+        padding: 25px;
+        margin: 25px;
+        box-shadow: 0 2px 5px #f5f5f5;
+        background: #eee;
+      }
+      input,
+      textarea {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #1c87c9;
+        outline: none;
+      }
+      .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #1c87c9;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+      }
+      button:hover {
+        background: #2371a0;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button.button {
+        background: none;
+        border-top: none;
+        outline: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: #02274a 1px solid;
+        padding: 0 0 3px 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button.button:hover {
+        border-bottom: #a99567 1px solid;
+        color: #a99567;
+      }
+
+  </style>
+  <body id='mouseTarget'>
+    <div id="container">
+        <ul id="onglets" class="clearfix">
+            <li>Concept</li>
+            <li>Menu</li>
+            <li>Photos</li>
+        </ul>
+        <ul id="contenus">
+            <li>
+                <img class="img-fluid" style="height: 500px; width: 100%;" src="./ca995757824913f84eb916f1c6646cfcaba93b28-5de17.webp" alt="">
+                <h1>Bar tapas à volonté, produits frais de saisons !</h1>
+            </li>
+            <li>
+                <p>Notre menu :</p>
+                <p id="menu"></p>
+                <button id="changeMenu">Marre de ce menu ? Changez-le !</button>
+            </li>
+            <li>
+                <div class="row">
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/1.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/2.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/3.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/4.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/5.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/6.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/7.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/8.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/9.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/10.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/11.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/12.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/13.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/14.jpg"></div>
+                    <div class="col-md-3" style="max-width: 25%; max-height: 500px;"> <img src="./img/15.jpg"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <a id="closeModal" class="close">&times;</a>
+                <form action="/">
+                    <h2>Contacter Nous</h2>
+                    <div>
+                        <input class="fname" type="text" name="name" placeholder="Nom" />
+                        <input type="text" name="name" placeholder="Email" />
+                        <input type="text" name="name" placeholder="Nombre de téléphone" />
+                        <input type="text" name="name" placeholder="Site Web" />
+                    </div>
+                    <span>Message</span>
+                    <div>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" href="/">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
